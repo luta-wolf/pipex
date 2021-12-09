@@ -32,7 +32,7 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
 			ar r $(NAME) $^
-			@echo "\033[36;1\n< Complited libft >\n\033[0m"
+			@echo "\033[36;1m\n< Complited libft >\n\033[0m"
 
 $(OBJ)	:	$(SRCS) $(HEADER)
 			$(CC) $(FLAFS) -c $(SRCS)
@@ -47,6 +47,6 @@ clean	:
 			@rm -rf $(OBJ) $(OBJ_B)
 
 fclean	:	clean
-			@rm -rf $(NAME)
+			@rm -f $(NAME)
 
 re		:	fclean all

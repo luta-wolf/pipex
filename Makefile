@@ -4,7 +4,7 @@ SRCS	=	pipex.c
 
 HEADER	=	pipex.h
 
-OBJ		=	$(SRCS%.c=%.o)
+OBJ		=	$(SRCS:%.c=%.o)
 
 LIB		=	libft/libft.a
 
@@ -16,36 +16,42 @@ FLAGS	=	-Wall -Wextra -Werror
 
 RM		= rm -rf
 #---------------------------------------------------------------------------------
-RED		=	"\033[1;31m"
-BLUE	=	"\033[1;34m"
-YELLOW	=	"\033[1;33m"
-WHITE	=	"\033[1;32m"
-PUPURE	=	"\033[1;35m"
-GRY		=	"\033[1;30m"
-END		=	"\033[0m"
+RED		=	\033[1;31m
+BLUE	=	\033[1;34m
+YELLOW	=	\033[1;33m
+WHITE	=	\033[1;32m
+PUPURE	=	\033[1;35m
+GRY		=	\033[1;30m
+TURQUOISE =	\033[36;1m
+END		=	\033[0m
 #---------------------------------------------------------------------------------
 .PHONY:		all	clean	fclean	re	bonus	libft
 
 all:		libft $(NAME)
+
 libft:
-			@$(MAKE) -C $(dir $(LIB))
+# @$(MAKE) -C $(dir $(LIB))
+			@$(MAKE) -C libft/
 
 
-$(NAME):	$(OBJ) %(LIB)
-			$(CC) $(INCLUDE) $(LIB) -o $(NAME) $(OBJ)
-			@echo "$(YELLOW)\n Complited $(NAME)\n$(YELLOW)"
+$(NAME):	$(OBJ)
+			$(CC) $(OBJ) $(LIB) -o $(NAME)
+			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
+
+$(OBJ)	:	$(SRCS) $(HEADER)
+			$(CC) $(FLAFS) -c $(SRCS)
 
 clean:
 			@$(RM) $(OBJ)
-			@$(MAKE) -C $(dir $(LIB)) clean
-			@echo "$(YELLOW)\n< Cleaning succeed >\n$(YELLOW)"
+			@$(MAKE) -C libft/ clean
+			@echo "$(YELLOW)\n< Cleaning succeed >\n$(END)"
 
 fclean:		clean
-			@$(MAKE) -C $(dir $(LIB)) fclean
+			@$(MAKE) -C libft/ fclean
 			@$(RM) $(NAME)
-			@echo "$(YELLOW)\n< All created files were deleted >\n$(YELLOW)"
+			@echo "$(YELLOW)\n< All created files were deleted >\n$(END)"
 
 re:			fclean all
-			@echo "$(YELLOW)\n< Remake done >\n$(YELLOW)"
+			@echo "$(YELLOW)\n< Remake done >\n$(END)"
 
 
