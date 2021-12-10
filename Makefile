@@ -1,6 +1,6 @@
 NAME	=	pipex
 
-SRCS	=	pipex.c
+SRCS	=	pipex.c		pipex_check.c
 
 HEADER	=	pipex.h
 
@@ -30,7 +30,6 @@ END		=	\033[0m
 all:		libft $(NAME)
 
 libft:
-# @$(MAKE) -C $(dir $(LIB))
 			@$(MAKE) -C libft/
 
 
