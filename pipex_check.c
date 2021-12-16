@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:59:43 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/16 14:01:50 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/16 23:16:38 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,14 @@ void	free_arr(char **arr)
 		i++;
 	}
 	free(arr);
+}
+
+void check_fd(int *fd1, int *fd2, char **argv)
+{
+	*fd1 = open(argv[1], O_RDONLY);
+	if(*fd1 == -1)
+		error_file(argv[1]);
+	*fd2 = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
+	if(*fd2 == -1)
+		error_file(argv[4]);
 }
