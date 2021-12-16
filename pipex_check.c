@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/16 13:59:43 by einterdi          #+#    #+#             */
+/*   Updated: 2021/12/16 14:01:50 by einterdi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 void	error_file(char *file)
@@ -7,7 +19,7 @@ void	error_file(char *file)
 	ft_putstr_fd(": ", 2);
 	ft_putstr_fd(file, 2);
 	ft_putstr_fd("\n", 2);
-	exit(0);
+	exit(EXIT_FAILURE);
 }
 
 void	error_cmd(char *cmd)
@@ -15,19 +27,38 @@ void	error_cmd(char *cmd)
 	ft_putstr_fd("\033[31mError:\e[0m command not found: ", 2);
 	ft_putstr_fd(cmd, 2);
 	ft_putstr_fd("\n", 2);
-	exit(0);
+	exit(EXIT_FAILURE);
 }
 
 void	check_args(int argc, char **argv)
 {
-	if(argc != 5)
+	if (argc != 5)
 	{
 		ft_putstr_fd("\033[31mError:\e[0m Wrong number of arguments.\n", 2);
 		ft_putstr_fd("Example: ./pipex file1 'cmd1' 'cmd2' file2\n", 2);
-		exit(0);
+		exit(EXIT_FAILURE);
 	}
-	if(access(argv[1], R_OK) == -1)
+/*	if(access(argv[1], R_OK) == -1)
 		error_file(argv[1]);
 	if(access(argv[argc - 1], W_OK) == -1)
-		error_file(argv[argc - 1]);
+		error_file(argv[argc - 1]);*/
+}
+
+void	error_process(void)
+{
+	perror("\033[31mError:\e[0m ");
+	exit(EXIT_FAILURE);
+}
+
+void	free_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
