@@ -6,11 +6,11 @@
 /*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:05:29 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 10:18:10 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/17 10:21:33 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/pipex.h"
+#include "../include/pipex.h"
 
 void	child1_process(int *pipe_fd, char **argv, char **env, int fd1)
 {

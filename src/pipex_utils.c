@@ -6,11 +6,11 @@
 /*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 09:47:26 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 10:19:35 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/17 10:21:38 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/pipex.h"
+#include "../include/pipex.h"
 
 char	**find_path(char **env)
 {

@@ -1,6 +1,6 @@
 NAME	=	pipex
 
-SRCS	=	pipex.c 	pipex_check.c	pipex_utils.c
+SRCS	=	src/pipex.c 	src/pipex_check.c	src/pipex_utils.c
 
 HEADER	=	include/pipex.h
 
@@ -37,8 +37,8 @@ $(NAME):	$(OBJ)
 			$(CC) $(OBJ) $(LIB) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
 
-$(OBJ)	:	$(SRCS) $(HEADER)
-			$(CC) $(FLAFS) -c $(SRCS)
+#$(OBJ)	:	$(SRCS) $(HEADER)
+#			$(CC) $(FLAFS) -c $(SRCS)
 
 clean:
 			@$(RM) $(OBJ)

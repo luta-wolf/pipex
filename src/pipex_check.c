@@ -6,11 +6,11 @@
 /*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:59:43 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 09:44:07 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/17 10:21:26 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/pipex.h"
+#include "../include/pipex.h"
 
 void	error_file(char *file)
 {
