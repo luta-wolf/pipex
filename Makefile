@@ -1,8 +1,8 @@
 NAME	=	pipex
 
-SRCS	=	pipex.c		pipex_check.c
+SRCS	=	pipex.c 	pipex_check.c	pipex_utils.c
 
-HEADER	=	pipex.h
+HEADER	=	include/pipex.h
 
 OBJ		=	$(SRCS:%.c=%.o)
 
