@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:59:43 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 10:21:26 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:00:16 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	error_cmd(char *cmd)
 	exit(EXIT_FAILURE);
 }
 
-void	check_args(int argc, char **argv)
+void	check_args(int argc)
 {
 	if (argc != 5)
 	{

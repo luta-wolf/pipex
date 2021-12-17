@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:05:29 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 10:21:33 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:00:29 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	child2_process(int *pipe_fd, char **argv, char **env, int fd2)
 	execve(line, cmd, env);
 }
 
-void	pipex(int argc, char **argv, char **env)
+void	pipex(char **argv, char **env)
 {
 	int		fd1;
 	int		fd2;
@@ -76,7 +76,7 @@ void	pipex(int argc, char **argv, char **env)
 
 int	main(int argc, char **argv, char **env)
 {
-	check_args(argc, argv);
-	pipex(argc, argv, env);
+	check_args(argc);
+	pipex(argv, env);
 	return (0);
 }
