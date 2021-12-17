@@ -24,21 +24,21 @@ OBJ		=	$(SRCS:%.c=%.o)
 OBJ_B	=	$(SRCS_B:%.c=%.o)
 
 CC		= 	gcc
-CFLAGS	=	 -Wall -Wextra -Werror
+FLAGS	=	 -Wall -Wextra -Werror
 
 .PHONY	:	all clean fclean re bonus
 
 all		:	$(NAME)
 
-$(NAME)	:	$(OBJ)
-			ar r $(NAME) $^
+$(NAME)	:	$(OBJ) $(HEADER)
+			ar r $(NAME) $?
 			@echo "\033[36;1m\n< Complited libft >\n\033[0m"
 
-$(OBJ)	:	$(SRCS) $(HEADER)
-			$(CC) $(FLAFS) -c $(SRCS)
+%.o 	:	%.c $(HEADER)
+			$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_B)	:	$(SRCS_B) $(HEADER)
-			$(CC) $(FLAFS) -c $(SRCS_B)
+			$(CC) $(FLAGS) -c $(SRCS_B)
 
 bonus	:	$(OBJ_B)
 			ar r $(NAME) $^

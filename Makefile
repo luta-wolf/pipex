@@ -34,11 +34,11 @@ libft:
 
 
 $(NAME):	$(OBJ)
-			$(CC) $(OBJ) $(LIB) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
 
-#$(OBJ)	:	$(SRCS) $(HEADER)
-#			$(CC) $(FLAFS) -c $(SRCS)
+#%.o 	:	%.c $(HEADER)
+#			$(CC) $(FLAGS) -c $(SRCS)
 
 clean:
 			@$(RM) $(OBJ)
