@@ -36,7 +36,7 @@ libft:
 $(NAME):	$(OBJ)
 			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
-			@say compilation of pipex is complited
+#			@say compilation of pipex is complited
 
 %.o 	:	%.c $(HEADER)
 			$(CC) $(FLAGS) -c $< -o $@

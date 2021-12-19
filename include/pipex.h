@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:05:20 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 15:00:42 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/19 15:17:17 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,8 @@ char	**find_path(char **env);
 char	*get_line(char *cmd, char **arr);
 
 #endif
+
+
+// ./pipex file1 yes "head -10" file2
+// ./pipex /dev/urandom "cat -e" "head -10" file2
+

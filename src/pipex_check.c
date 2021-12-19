@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:59:43 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/17 15:00:16 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/19 15:24:03 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_args(int argc)
 	{
 		ft_putstr_fd("\033[31mError:\e[0m Wrong number of arguments.\n", 2);
 		ft_putstr_fd("Example: ./pipex file1 'cmd1' 'cmd2' file2\n", 2);
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 }
 
