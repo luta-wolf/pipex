@@ -11,5 +11,4 @@
 Для запуска нажмите make
 
 Тестеры для проверки pipex:
-	 
 	 https://github.com/vfurmane/pipex-tester
